@@ -188,6 +188,7 @@ resource "null_resource" "configure-cat-app" {
     connection {
       type        = "ssh"
       user        = "ubuntu"
+      agent       = false
       #private_key = tls_private_key.hashicat.private_key_pem
       private_key = "${var.priv_key}"
       host        = aws_eip.hashicat.public_ip
