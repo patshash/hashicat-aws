@@ -154,9 +154,9 @@ resource "null_resource" "configure-cat-app" {
     build_number = timestamp()
   }
 
-  provisioner "local-exec" {
-    command = "echo ${var.priv_key}"
-    }
+#  provisioner "local-exec" {
+#    command = "echo ${var.priv_key}"
+#    }
 
 #  provisioner "file" {
 #    source      = "files/"
