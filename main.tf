@@ -173,7 +173,6 @@ resource "null_resource" "configure-cat-app" {
 
   provisioner "remote-exec" {
     inline = [
-      "exit 1",
       "sudo apt -y update",
       "sleep 15",
       "sudo apt -y update",
