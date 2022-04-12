@@ -208,7 +208,7 @@ resource "aws_key_pair" "hashicat" {
 
 resource "aws_s3_bucket" "b" {
   bucket = "pcarey-test-bucket"
-  acl    = "public"
+  acl    = "public-read"
 
   versioning {
     enabled = true
