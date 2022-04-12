@@ -207,8 +207,8 @@ resource "aws_key_pair" "hashicat" {
 }
 
 resource "aws_s3_bucket" "b" {
-  bucket = "my-tf-test-bucket"
-  acl    = "private"
+  bucket = "pcarey-test-bucket"
+  acl    = "public"
 
   versioning {
     enabled = true
