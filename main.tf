@@ -129,6 +129,7 @@ resource "aws_instance" "hashicat" {
   tags = {
     Name = "${var.prefix}-hashicat-instance"
     Department = "devops"
+    Billable = "True"
   }
 }
 
@@ -208,7 +209,7 @@ resource "aws_key_pair" "hashicat" {
 
 resource "aws_s3_bucket" "b" {
   bucket = "pcarey-test-bucket"
-  acl    = "public-read"
+  acl    = "private"
 
   versioning {
     enabled = true
