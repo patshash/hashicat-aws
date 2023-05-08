@@ -121,8 +121,8 @@ resource "aws_eip_association" "hashicat" {
 resource "aws_instance" "hashicat" {
   ami                         = data.aws_ami.ubuntu.id
   instance_type               = var.instance_type
-  key_name                    = aws_key_pair.hashicat.key_name
-  #key_name                    = "pcarey-mac"
+  #key_name                    = aws_key_pair.hashicat.key_name
+  key_name                    = "pcarey-mac"
   associate_public_ip_address = true
   subnet_id                   = aws_subnet.hashicat.id
   vpc_security_group_ids      = [aws_security_group.hashicat.id]
@@ -185,8 +185,8 @@ resource "null_resource" "configure-cat-app" {
       type        = "ssh"
       user        = "ubuntu"
       agent       = false
-      private_key = tls_private_key.hashicat.private_key_pem
-      #private_key = "${var.priv_key}"
+      #private_key = tls_private_key.hashicat.private_key_pem
+      private_key = "${var.priv_key}"
       host        = aws_eip.hashicat.public_ip
     }
   }
