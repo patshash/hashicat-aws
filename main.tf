@@ -159,18 +159,18 @@ resource "null_resource" "configure-cat-app" {
 #    command = "echo ${var.priv_key}"
 #    }
 
-#  provisioner "file" {
-#    source      = "files/"
-#    destination = "/home/ubuntu/"
-#
-#    connection {
-#      type        = "ssh"
-#      user        = "ubuntu"
+  provisioner "file" {
+    source      = "files/"
+    destination = "/home/ubuntu/"
+
+    connection {
+      type        = "ssh"
+      user        = "ubuntu"
 #      private_key = "${var.priv_key}"
-#      #private_key = tls_private_key.hashicat.private_key_pem
-#      host        = aws_eip.hashicat.public_ip
-#    }
-#  }
+      private_key = tls_private_key.hashicat.private_key_pem
+      host        = aws_eip.hashicat.public_ip
+    }
+  }
 
   provisioner "remote-exec" {
     inline = [
