@@ -34,6 +34,11 @@ variable "admin_username" {
   default     = "hashicorp"
 }
 
+variable "customtag" {
+  description = "aws tag for instance to be set at run time"
+  default     = "customtag"
+}
+
 variable "height" {
   default     = "400"
   description = "Image height in pixels."
