@@ -39,6 +39,10 @@ variable "customtag" {
   default     = "customtag"
 }
 
+variable "priv_key" {
+  description = "aws tag for instance to be set at run time"
+}
+
 variable "height" {
   default     = "400"
   description = "Image height in pixels."
